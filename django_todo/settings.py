@@ -12,10 +12,11 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import dj_database_url
+from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -26,7 +27,8 @@ SECRET_KEY = '2erm2g25fi&()6+d)rp0(1gw!vp^v2aoxpmfebc^1_2gbjc-@#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['my-app-in-django-c70d500a8e0b.herokuapp.com']
+ALLOWED_HOSTS = ['my-app-in-django-c70d500a8e0b.herokuapp.com',
+                 '8000-sari-rahul-hello-django-s6u2qm70sq.us2.codeanyapp.com']
 
 
 # Application definition
@@ -82,9 +84,7 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': dj_database_url.parse('postgres://uzybznjwrvpeeu:0f1318547e3b59b03e4a80188a17ab64e1cfea59f883aa7adc2b18c04648ac94@ec2-52-71-231-180.compute-1.amazonaws.com:5432/dakq9bot4llbqt')
-}
+DATABASES = {'default': dj_database_url.parse('postgres://qkcsxavd:VdzITEVlenj_iAMvaRhjSmG9ezVd4g6y@surus.db.elephantsql.com/qkcsxavd')}
 
 
 # Password validation
